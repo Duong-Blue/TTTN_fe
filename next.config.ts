@@ -9,6 +9,11 @@ const nextConfig: NextConfig = {
         hostname: 'dummyjson.com',
         pathname: '/**',
       },
+      { // Thêm cấu hình cho CDN hostname
+        protocol: 'https',
+        hostname: 'cdn.dummyjson.com', // Đây là hostname bị thiếu
+        pathname: '/**',
+      },
     ],
   },
 };
