@@ -1,4 +1,5 @@
-import { User } from '@/hooks/useUser';
+
+import { User } from '@/types/user';
 import Image from 'next/image';
 import React from 'react';
 

@@ -1,6 +1,7 @@
-import { User } from '../hooks/useUser';
+import { User } from "@/types/user";
 
-export async function fetchUserAPI(skip: number, limit: number): Promise<{ users: User[]; total: number }> {
+
+export async function fetchUsersAPI(skip: number, limit: number): Promise<{ users: User[]; total: number }> {
   const res = await fetch(`https://dummyjson.com/users?limit=${limit}&skip=${skip}`);
   if (!res.ok) throw new Error('failed to fetch users');
   const data = await res.json();

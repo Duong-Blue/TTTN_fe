@@ -1,7 +1,7 @@
 'use client';
 import useUser from '@/hooks/useUser';
 import React from 'react';
-import UserTable from '../../components/UseList';
+import UserTable from '../../components/UserList';
 
 export default function Page() {
   const { user, loading, error, page, setPage, total, limit, search, setSearch } = useUser(5);

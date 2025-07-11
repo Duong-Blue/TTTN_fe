@@ -1,27 +1,7 @@
 "use client";
-import { fetchUserAPI, searchUsersAPI } from '@/services/userFetch';
-import React, { useEffect, useState } from 'react';
-
-export interface User {
-  id: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone: string;
-  image: string;
-  address: {
-    address: string;
-    city: string;
-    state: string;
-    country: string;
-  };
-  company: {
-    name: string;
-    department: string;
-    title: string;
-  };
-  role: string;
-}
+import { fetchUsersAPI, searchUsersAPI } from '@/services/userFetch';
+import { User } from '@/types/user';
+import { useEffect, useState } from 'react';
 
 export default function useUser(limit = 5) {
   const [user, setUser] = useState<User[]>([]);
@@ -41,7 +21,7 @@ export default function useUser(limit = 5) {
         setTotal(total);
       } else {
         const skip = page * limit;
-        const { users, total } = await fetchUserAPI(skip, limit);
+        const { users, total } = await fetchUsersAPI(skip, limit);
         setUser(users);
         setTotal(total);
       }
